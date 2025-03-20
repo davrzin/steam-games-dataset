@@ -61,6 +61,8 @@ public class Transformations{
     
                 csvPrinter.printRecord(row);
             }
+
+            csvPrinter.flush();
     
         } 
         
@@ -93,4 +95,37 @@ public class Transformations{
         }
     }
 
-}    
+    public static void transformPortugueseSupport(File file) {
+        File gamesFormatedSupportPortuguese = new File("portuguese_supported_games.csv");
+    
+        try (Reader reader = new FileReader(file);
+             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.builder().setHeader().setSkipHeaderRecord(true).build());
+             Writer writer = new FileWriter(gamesFormatedSupportPortuguese);
+             CSVPrinter csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().setHeader(csvParser.getHeaderMap().keySet().toArray(new String[0])).build())) {
+    
+            for (CSVRecord record : csvParser) {
+
+                String line = record.get("Full audio languages");
+
+                if (line != null && !line.trim().isEmpty()) {
+                    
+                    String cleanedLanguages = line.replaceAll("[\\[\\]']", "").trim();
+
+                    String[] languages = cleanedLanguages.split("\\s*,\\s*");
+
+                    for (String language : languages) {
+                        if ("Portuguese - Brazil".equalsIgnoreCase(language)) {
+                            csvPrinter.printRecord(record);
+                        }
+                    }
+                }
+            }
+            csvPrinter.flush();
+        } 
+        
+        catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+
+}

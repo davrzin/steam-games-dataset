@@ -15,6 +15,10 @@ public class Main {
         System.out.println("Generating file called 'games_linux.csv'");
         Transformations.transformSupportLinux(new File("games_formated_release_data.csv"));
         System.out.println("Done\n");
+
+        System.out.println("Generating file called 'portuguese_supported_games.csv'");
+        Transformations.transformPortugueseSupport(new File("games_formated_release_data.csv"));
+        System.out.println("Done\n");
         
     }
 }

@@ -1,24 +1,29 @@
 package com.faculdadeuepb.computacao.application;
 
-import java.io.File;
+import java.io.IOException;
 
+import com.faculdadeuepb.computacao.model.entities.OrdinationSelectionSort;
 import com.faculdadeuepb.computacao.model.entities.Transformations;
 
 public class Main {
-        
-    public static void main(String[] args){
 
-        System.out.println("Generating file called 'games_formated_release_data.csv'");
-        Transformations.transformDateFormat(new File("games.csv"));
-        System.out.println("Done\n");
-        
-        System.out.println("Generating file called 'games_linux.csv'");
-        Transformations.transformSupportLinux(new File("games_formated_release_data.csv"));
-        System.out.println("Done\n");
+    public static double convertNanoToSeconds(long nanoseconds) {
+        return nanoseconds / 1_000_000_000.0; // Converte para segundos
+    }
+    
+    public static void main(String[] args) throws IOException{
 
-        System.out.println("Generating file called 'portuguese_supported_games.csv'");
-        Transformations.transformPortugueseSupport(new File("games_formated_release_data.csv"));
-        System.out.println("Done\n");
+        long startTime = System.nanoTime();
+
+        //Transformations.createFiles();
         
+        OrdinationSelectionSort.ordenandoSelectionSort();
+
+        long endTime = System.nanoTime();
+
+        long duration = endTime - startTime;
+        
+        System.out.println("Tempo de execução: " + convertNanoToSeconds(duration) + " nanosegundos");
+
     }
 }

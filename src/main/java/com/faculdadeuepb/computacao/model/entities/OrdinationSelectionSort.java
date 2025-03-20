@@ -1,53 +1,62 @@
 package com.faculdadeuepb.computacao.model.entities;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
 public class OrdinationSelectionSort {
 
-    public static int[] countLinesColumnsCsv(File file){
+    public static void countLinesColumnsCsv() throws IOException{
 
-        CSVParser csvParser = CSVCreate.createReader(file);
+        File gamesFormatedDate = new File("games_formated_release_data.csv");
+        File gamesFormatedSelectionSort = new File("games_release_date_SelectionSort.csv");
+
+        CSVParser csvParser = CSVCreate.createReader(gamesFormatedDate);
+        CSVPrinter csvPrinter = CSVCreate.createWriter(gamesFormatedSelectionSort, csvParser);
 
         int[] resultados = new int[2];
         int linhas = 0;
         int colunas = 0;
         CSVRecord lastRecord = null;
+
+        List<CSVRecord> records = csvParser.getRecords();
         
-        for (CSVRecord record : csvParser){
+        for (CSVRecord record : records){
             linhas++;
             lastRecord = record;  
-        }      
+        }
+
         if(lastRecord != null)
             colunas = lastRecord.size();
 
         resultados[0] = linhas;
         resultados[1] = colunas;
 
-        return resultados;
-    }
+        String[][] dados = new String[resultados[0]][resultados[1]];
 
-    public static String[][] conversationToArray(){
+        int count = 0; 
 
-        File file = new File("games_formated_release_data.csv");
-
-        int[] linhasColunas = countLinesColumnsCsv(file);
-        String[][] dados = new String[linhasColunas[0]][linhasColunas[1]];
-
-        CSVParser csvParser = CSVCreate.createReader(file);
-        
-        int i = 0;   
-        for (CSVRecord record : csvParser){
+        for (CSVRecord record : records){
             for (int j = 0; j < record.size(); j++){
-                dados[i][j] = record.get(j);
+                dados[count][j] = record.get(j);
             }
-            i++;
-        }      
-            
-        return dados;
-    }
+            count++;
+        }
+
+        int rows = dados.length;
+        String[][] dadosOrdenados = SelectionSort(dados,rows);
+
+        for (int i = 0; i < rows; i++) {
+            csvPrinter.print(Arrays.toString(dadosOrdenados[i]));
+            csvPrinter.println();
+        }
+
+    }     
 
     public static Boolean checkDateSize(String primeiraData, String segundaData){
 
@@ -77,10 +86,7 @@ public class OrdinationSelectionSort {
         return true;
     }
 
-    public static String[][] SelectionSort(String[][] dadosArray){
-
-        int rows = dadosArray.length;
-        System.out.println(rows);
+    public static String[][] SelectionSort(String[][] dadosArray,int rows){
 
         for (int i = 0; i < rows-1; i++) {
             int minIndex = i;
@@ -94,9 +100,8 @@ public class OrdinationSelectionSort {
                 String[] temp = dadosArray[i];
                 dadosArray[i] = dadosArray[minIndex];
                 dadosArray[minIndex] = temp;
-                System.out.println("Alteração feita");
             }
-            System.out.println("Linha" + i);
+            //System.err.println("-" + i);
         }
 
         return dadosArray;
@@ -104,13 +109,14 @@ public class OrdinationSelectionSort {
     }
 
     public static void ordenandoSelectionSort(){
-
-        String[][] arrayDados = conversationToArray();
-
-        arrayDados = SelectionSort(arrayDados);
-
-        System.out.println(arrayDados[0][2]);
-
+        try {
+            System.out.println("Generating 'games_release_date_SelectionSort.csv'");
+            countLinesColumnsCsv();
+        } 
+        catch(IOException e){
+            System.out.println("Erro: " + e.getMessage());
+        }
+       
     }
 
 }

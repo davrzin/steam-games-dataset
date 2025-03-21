@@ -2,10 +2,10 @@ package com.faculdadeuepb.computacao.application;
 
 import java.io.IOException;
 
-import com.faculdadeuepb.computacao.model.entities.OrdinationSelectionSort;
-import com.faculdadeuepb.computacao.model.entities.Transformations;
+import com.faculdadeuepb.computacao.model.utils.Ordination;
+import com.faculdadeuepb.computacao.model.utils.Transformations;
 
-public class Main {
+public class Program {
 
     public static double convertNanoToSeconds(long nanoseconds) {
         return nanoseconds / 1_000_000_000.0;
@@ -17,13 +17,13 @@ public class Main {
 
         Transformations.createFiles();
         
-        OrdinationSelectionSort.ordenandoSelectionSort();
+        Ordination.createFiles();
 
         long endTime = System.nanoTime();
 
         long duration = endTime - startTime;
         
-        System.out.println("Tempo de execução: " + convertNanoToSeconds(duration) + " nanosegundos");
+        System.out.println("Tempo de execução: " + convertNanoToSeconds(duration) + " segundos");
 
     }
 }

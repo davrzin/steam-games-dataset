@@ -1,4 +1,4 @@
-package com.faculdadeuepb.computacao.model.entities;
+package com.faculdadeuepb.computacao.model.utils;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
@@ -35,23 +35,20 @@ public class Transformations{
         CSVPrinter csvPrinterLinux = CSVCreate.createWriter(gamesFormatedSupportLinux, csvParser);
         CSVPrinter csvPrinterPortuguese = CSVCreate.createWriter(gamesFormatedSupportPortuguese, csvParser);
         
-        List<CSVRecord> records = csvParser.getRecords();
+        for (CSVRecord record : csvParser) {
 
-        for (CSVRecord record : records) {
             boolean linuxSupport = Boolean.parseBoolean(record.get(19));
             if (linuxSupport) {
-                csvPrinterLinux.printRecord(record); 
+                csvPrinterLinux.printRecord(record);
             }
-        }
-
-        for (CSVRecord record : records) {
             String line = record.get(10);
-            if (line != null && !line.trim().isEmpty()) {  
+            if (line != null && !line.trim().isEmpty()) {
                 String cleanedLanguages = line.replaceAll("[\\[\\]']", "").trim();
                 String[] languages = cleanedLanguages.split("\\s*,\\s*");
                 for (String language : languages) {
                     if ("Portuguese - Brazil".equalsIgnoreCase(language)) {
                         csvPrinterPortuguese.printRecord(record);
+                        break;
                     }
                 }
             }
@@ -70,7 +67,7 @@ public class Transformations{
 
             System.out.println("Generating 'portuguese_supported_games.csv' and 'games_linux.csv' files.");
             Transformations.transformPortugueseAndLinux();
-            System.out.println("Done");
+            System.out.println("Done\n");
         }
         catch (IOException e) {
             System.out.println(e.getMessage());

@@ -1,4 +1,4 @@
-package com.faculdadeuepb.computacao.model.entities;
+package com.faculdadeuepb.computacao.model.utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,6 +31,7 @@ public class CSVCreate {
 
     public static CSVPrinter createWriter(File createdFile, CSVParser csvParser){
         CSVPrinter csvPrinter = null;
+        
         try{
             Writer writer = new FileWriter(createdFile);
             csvPrinter = new CSVPrinter(writer, CSVFormat.DEFAULT.builder().setHeader(csvParser.getHeaderMap().keySet().toArray(new String[0])).build());

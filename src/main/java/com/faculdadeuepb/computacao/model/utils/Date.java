@@ -1,4 +1,4 @@
-package com.faculdadeuepb.computacao.model.entities;
+package com.faculdadeuepb.computacao.model.utils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -39,6 +39,34 @@ public class Date {
             return false;
         }
 
+    }
+
+    public static Boolean checkDateSize(String primeiraData, String segundaData){
+
+        String[] primeiraDataForm = primeiraData.split("/");
+        String[] segundaDataForm = segundaData.split("/");
+
+        int dia1 = Integer.parseInt(primeiraDataForm[0]);
+        int mes1 = Integer.parseInt(primeiraDataForm[1]);
+        int ano1 = Integer.parseInt(primeiraDataForm[2]);
+
+        int dia2 = Integer.parseInt(segundaDataForm[0]);
+        int mes2 = Integer.parseInt(segundaDataForm[1]);
+        int ano2 = Integer.parseInt(segundaDataForm[2]);
+
+        if (ano1 > ano2) {
+            return false;
+        } 
+        
+        else if (ano1 == ano2 && mes1 > mes2) {
+            return false;
+        } 
+        
+        else if (ano1 == ano2 && mes1 == mes2 && dia1 > dia2) {
+            return false;
+        }
+
+        return true;
     }
 
 }

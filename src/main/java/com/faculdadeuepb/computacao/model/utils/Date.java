@@ -14,6 +14,7 @@ public class Date {
 
     inputFormat = DateTimeFormatter.ofPattern("MMM d, yyyy", Locale.ENGLISH);
     outputFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     if(isValidDate(dateStr, inputFormat)){
         date = LocalDate.parse(dateStr, inputFormat);
         return date.format(outputFormat);
@@ -41,32 +42,33 @@ public class Date {
 
     }
 
-    public static Boolean checkDateSize(String primeiraData, String segundaData){
+    public static Boolean checkDateSize(String firstDate, String secondDate){
 
-        String[] primeiraDataForm = primeiraData.split("/");
-        String[] segundaDataForm = segundaData.split("/");
-
-        int dia1 = Integer.parseInt(primeiraDataForm[0]);
-        int mes1 = Integer.parseInt(primeiraDataForm[1]);
-        int ano1 = Integer.parseInt(primeiraDataForm[2]);
-
-        int dia2 = Integer.parseInt(segundaDataForm[0]);
-        int mes2 = Integer.parseInt(segundaDataForm[1]);
-        int ano2 = Integer.parseInt(segundaDataForm[2]);
-
-        if (ano1 > ano2) {
+        String[] firstDateParts = firstDate.split("/");
+        String[] secondDateParts = secondDate.split("/");
+    
+        int day1 = Integer.parseInt(firstDateParts[0]);
+        int month1 = Integer.parseInt(firstDateParts[1]);
+        int year1 = Integer.parseInt(firstDateParts[2]);
+    
+        int day2 = Integer.parseInt(secondDateParts[0]);
+        int month2 = Integer.parseInt(secondDateParts[1]);
+        int year2 = Integer.parseInt(secondDateParts[2]);
+    
+        if (year1 > year2) {
             return false;
         } 
         
-        else if (ano1 == ano2 && mes1 > mes2) {
+        else if (year1 == year2 && month1 > month2) {
             return false;
         } 
         
-        else if (ano1 == ano2 && mes1 == mes2 && dia1 > dia2) {
+        else if (year1 == year2 && month1 == month2 && day1 > day2) {
             return false;
         }
-
+    
         return true;
-    }
 
+    }
+    
 }

@@ -4,40 +4,41 @@ import java.util.Arrays;
 
 public class SortingAlgorithms {
 
-    public static String[][] selectionSort(String[][] dadosArray,int rows){
+    public static String[][] selectionSort(String[][] rawData,int rows){
 
         for (int i = 0; i < rows-1; i++) {
             int minIndex = i;
             for (int j = i+1; j<rows; j++) {
-                if (Date.checkDateSize(dadosArray[j][2], dadosArray[minIndex][2])) {
+                if (Date.checkDateSize(rawData[j][2], rawData[minIndex][2])) {
                     minIndex = j;
                 }
             }
 
             if (minIndex != i) {
-                String[] temp = dadosArray[i];
-                dadosArray[i] = dadosArray[minIndex];
-                dadosArray[minIndex] = temp;
+                String[] temp = rawData[i];
+                rawData[i] = rawData[minIndex];
+                rawData[minIndex] = temp;
             }
         }
 
-        return dadosArray;
+        return rawData;
 
     }
 
-    public static String[][] insertionSort(String[][] dadosArray, int rows){
+    public static String[][] insertionSort(String[][] rawData, int rows){
+        
         for (int i = 1; i < rows; i++){
-            String[] chave = dadosArray[i];
+            String[] chave = rawData[i];
             int j = i - 1;
 
-            while (j >= 0 && !Date.checkDateSize(dadosArray[j][2], chave[2])){
-                dadosArray[j+1] = dadosArray[j]; 
+            while (j >= 0 && !Date.checkDateSize(rawData[j][2], chave[2])){
+                rawData[j+1] = rawData[j]; 
                 j = j-1;
             }
-            dadosArray[j+1] = chave;  
+            rawData[j+1] = chave;  
         }
         
-        return dadosArray;
+        return rawData;
     }
 
     public static String[][] mergeSort(String[][] dataArray, int rows) {

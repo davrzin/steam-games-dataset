@@ -14,7 +14,8 @@ import org.apache.commons.csv.CSVPrinter;
 
 public class CSVCreate {
 
-    public static CSVParser createReader(File readFile){
+    public static CSVParser initializeCSVParser(File readFile){
+        
         CSVParser csvParser = null;
         try{
             Reader reader = new FileReader(readFile);
@@ -29,7 +30,7 @@ public class CSVCreate {
         return csvParser;
     }
 
-    public static CSVPrinter createWriter(File createdFile, CSVParser csvParser){
+    public static CSVPrinter initializeCSVPrinter(File createdFile, CSVParser csvParser){
         CSVPrinter csvPrinter = null;
         
         try{

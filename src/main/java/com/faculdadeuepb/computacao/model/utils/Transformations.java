@@ -14,8 +14,8 @@ public class Transformations{
         File games = new File("games.csv");
         File gamesFormatedDate = new File("games_formated_release_data.csv");
 
-        CSVParser csvParser = CSVCreate.createReader(games);
-        CSVPrinter csvPrinter = CSVCreate.createWriter(gamesFormatedDate, csvParser);
+        CSVParser csvParser = CSVCreate.initializeCSVParser(games);
+        CSVPrinter csvPrinter = CSVCreate.initializeCSVPrinter(gamesFormatedDate, csvParser);
 
         for (CSVRecord record : csvParser) {
             List<String> row = record.toList();
@@ -31,9 +31,9 @@ public class Transformations{
         File gamesFormatedDate = new File("games_formated_release_data.csv");
         File gamesFormatedSupportLinux = new File("games_linux.csv");
         File gamesFormatedSupportPortuguese = new File("portuguese_supported_games.csv");
-        CSVParser csvParser = CSVCreate.createReader(gamesFormatedDate);
-        CSVPrinter csvPrinterLinux = CSVCreate.createWriter(gamesFormatedSupportLinux, csvParser);
-        CSVPrinter csvPrinterPortuguese = CSVCreate.createWriter(gamesFormatedSupportPortuguese, csvParser);
+        CSVParser csvParser = CSVCreate.initializeCSVParser(gamesFormatedDate);
+        CSVPrinter csvPrinterLinux = CSVCreate.initializeCSVPrinter(gamesFormatedSupportLinux, csvParser);
+        CSVPrinter csvPrinterPortuguese = CSVCreate.initializeCSVPrinter(gamesFormatedSupportPortuguese, csvParser);
         
         for (CSVRecord record : csvParser) {
 
@@ -41,6 +41,7 @@ public class Transformations{
             if (linuxSupport) {
                 csvPrinterLinux.printRecord(record);
             }
+
             String line = record.get(10);
             if (line != null && !line.trim().isEmpty()) {
                 String cleanedLanguages = line.replaceAll("[\\[\\]']", "").trim();
@@ -60,13 +61,14 @@ public class Transformations{
     }
 
     public static void createFiles(){
+
         try {
             System.out.println("Generating 'games_formated_release_data.csv'");
-            Transformations.transformDateFormat();
+            transformDateFormat();
             System.out.println("Done\n");
 
             System.out.println("Generating 'portuguese_supported_games.csv' and 'games_linux.csv' files.");
-            Transformations.transformPortugueseAndLinux();
+            transformPortugueseAndLinux();
             System.out.println("Done\n");
         }
         catch (IOException e) {

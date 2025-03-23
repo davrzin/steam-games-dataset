@@ -16,8 +16,8 @@ public class Ordination {
         File gamesFormatedDate = new File("games_formated_release_data.csv");
         File sortedFile = new File("games_release_date_" + sortingMethod + ".csv");
     
-        CSVParser csvParser = CSVCreate.createReader(gamesFormatedDate);
-        CSVPrinter csvPrinter = CSVCreate.createWriter(sortedFile, csvParser);
+        CSVParser csvParser = CSVCreate.initializeCSVParser(gamesFormatedDate);
+        CSVPrinter csvPrinter = CSVCreate.initializeCSVPrinter(sortedFile, csvParser);
     
         List<CSVRecord> records = csvParser.getRecords();
         int rows = records.size();
@@ -27,34 +27,34 @@ public class Ordination {
             columns = records.get(0).size();
         }
     
-        String[][] dados = new String[rows][columns];
+        String[][] rawData = new String[rows][columns];
     
         for (int i = 0; i < rows; i++) {
             CSVRecord record = records.get(i);
             for (int j = 0; j < columns; j++) {
-                dados[i][j] = record.get(j);
+                rawData[i][j] = record.get(j);
             }
         }
 
-        String[][] dadosOrdenados;
+        String[][] sortedData;
 
         if("SelectionSort".equalsIgnoreCase(sortingMethod)){
-            dadosOrdenados = SortingAlgorithms.selectionSort(dados, rows);
+            sortedData = SortingAlgorithms.selectionSort(rawData, rows);
         }
 
         else if("InsertionSort".equalsIgnoreCase(sortingMethod)){
-            dadosOrdenados = SortingAlgorithms.insertionSort(dados, rows);
+            sortedData = SortingAlgorithms.insertionSort(rawData, rows);
         }
 
         else if("MergeSort".equalsIgnoreCase(sortingMethod)){
-            dadosOrdenados = SortingAlgorithms.mergeSort(dados, rows);
+            sortedData = SortingAlgorithms.mergeSort(rawData, rows);
         }
         
         else{
             throw new IllegalArgumentException("Método de ordenação inválido: " + sortingMethod);
         }
     
-        for(String[] linha : dadosOrdenados){
+        for(String[] linha : sortedData){
             csvPrinter.printRecord((Object[]) linha);
         }
     
@@ -66,17 +66,17 @@ public class Ordination {
     public static void createFiles(){
         try {
 
-            //System.out.println("Generating 'games_release_date_SelectionSort.csv'");
-            //generateCsvSorted("SelectionSort");
-            //System.out.println("Done\n");
+            System.out.println("Generating 'games_release_date_SelectionSort.csv'");
+            generateCsvSorted("SelectionSort");
+            System.out.println("Done\n"); // de 20 a 21 minutos
 
             System.out.println("Generating 'games_release_date_InsertionSort.csv'");
-            generateCsvSorted("InsertionSort");
+            generateCsvSorted("InsertionSort"); // de 5 a 6 minutos.
             System.out.println("Done\n");
 
-            //System.out.println("Generating 'games_release_date_MergeSort.csv'");
-            //generateCsvSorted("MergeSort"); //de 3 a 4 segundos
-            //System.out.println("Done\n"); 
+            System.out.println("Generating 'games_release_date_MergeSort.csv'");
+            generateCsvSorted("MergeSort"); // de 3 a 4 segundos
+            System.out.println("Done\n"); 
 
         } 
         catch(IOException e){

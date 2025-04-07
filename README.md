@@ -1,4 +1,16 @@
 # Steam-Games-Dataset
+
+## **Sumário**  
+- [Descrição](#descrição)  
+- [Pré-requisitos](#pré-requisitos) 
+- [Preparando o Ambiente](#preparando-o-ambiente)  
+  - [Windows](#Windows)  
+  - [Linux](#Linux)
+  - [Mac OS](#Mac-OS)
+- [Instruções de Uso](#instruções-de-uso)
+
+- [Equipe Envolvida](#equipe-envolvida)s
+
 ## Descrição
 Este projeto tem como objetivo estudar o desempenho dos algoritmos de ordenação utilizando dados reais do "Steam Games Dataset" obtido no [Kaggle](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset). Para isso, é necessário realizar algumas transformações nos dados brutos, garantindo que estejam no formato adequado para processamento.
 
@@ -20,35 +32,56 @@ Utilização do arquivo "games.csv" para as transformações.
 
     - Arquivo gerado: "portuguese_supported_games.csv".
 
-Em construção...
+*Em construção...*
 
-## Instruções de Instalação
-Após verificar a versão Java e Maven
-
-Clone este repositorio usando o URL
-```
-https://github.com/davrzin/steam-games-dataset.git
-````
+## Pré-Requisitos
+- Maven versão: 3.8.7
+- Java versão: 21.0.6
 
 
+*Em construção...*
 
-Em construção...
+## Preparando o Ambiente
+### Windows
+*Em construção...*
+
+### Linux
+
+**1. Instalando o Java Development Kit (JDK):**
+
+- [Como instalar o JDK no Ubuntu](https://www.hostinger.com.br/tutoriais/como-instalar-java-no-ubuntu) (testado)
+
+**2. Instalando a Maven:**
+- [Como instalar a Maven no Ubuntu](https://www.hostinger.com.br/tutoriais/install-maven-ubuntu)
+
+
+**3. Instalando e configurando o Visual Studio Code:**
+
+Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) e adicione o package ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Esse package contém todos as extensões fundamentais para desenvolvimento na linguagem Java.
+
+*Em construção...*
+
+
+### Mac OS
+*Em construção...*
+
 ## Instruções de Uso
+Após instalar Java, Maven e o Visual Studio Code, podemos prosseguir, de fato, para a execução do sistema desenvolvido.
+
+Você pode clonar este repositorio usando o URL `https://github.com/davrzin/steam-games-dataset.git` ou baixá-lo como arquivo zip.
+
 Baixe o aquivo  "games.csv" na página Steam Games Dataset da plataforma Kaggle. [Link](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset)
 
-Cole o arquivo na pasta "steam-games-dataset" deste repositorio
+Descompacte o arquivo "games.csv.zip" e cole no diretorio principal deste repositorio.
 
-Execute a classe "Program.Java"
+Após clonar ou baixar, e descompactar, o repositório, abra-o no Visual Studio Code e execute a classe "Program.Java".
 
-```
-Adicionar o comando para executar aqui
+Com isso, o sistema irá efetuar as modificações e devolver os arquivos propostoas na pasta principal.
 
-```
-Em construção...
-## Pré-Requisitos
-
-- maven (versão tal)
-- java version "23.0.2" 2025-01-21
+*Em construção...*
 
 
-Em construção...
+
+## Equipe Envolvida
+
+*Em Construção...*

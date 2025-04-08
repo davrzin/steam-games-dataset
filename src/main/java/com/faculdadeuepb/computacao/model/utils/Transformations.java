@@ -1,13 +1,12 @@
 package com.faculdadeuepb.computacao.model.utils;
+
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
 import java.io.*;
-import java.util.List;
 
-
-public class Transformations{
+public class Transformations {
 
     public static void transformDateFormat() throws IOException {
 
@@ -18,14 +17,23 @@ public class Transformations{
         CSVPrinter csvPrinter = CSVCreate.initializeCSVPrinter(gamesFormatedDate, csvParser);
 
         for (CSVRecord record : csvParser) {
-            List<String> row = record.toList();
-            row.set(2, Date.convertDate(record.get("Release date")));
-            csvPrinter.printRecord(row);
+            String[] row = new String[record.size()];
+
+            for (int i = 0; i < record.size(); i++) {
+                row[i] = record.get(i);
+            }
+
+            // Assuming "release date" is in position 2
+            row[2] = Date.convertDate(record.get("Release date"));
+
+            csvPrinter.printRecord((Object[]) row);
         }
         csvPrinter.flush();
 
     } 
         
+    }
+
     public static void transformPortugueseAndLinux() throws IOException {
 
         File gamesFormatedDate = new File("games_formated_release_data.csv");
@@ -35,6 +43,7 @@ public class Transformations{
         CSVPrinter csvPrinterLinux = CSVCreate.initializeCSVPrinter(gamesFormatedSupportLinux, csvParser);
         CSVPrinter csvPrinterPortuguese = CSVCreate.initializeCSVPrinter(gamesFormatedSupportPortuguese, csvParser);
         
+
         for (CSVRecord record : csvParser) {
 
             boolean linuxSupport = Boolean.parseBoolean(record.get(19));
@@ -58,6 +67,7 @@ public class Transformations{
         csvPrinterLinux.flush();
         csvPrinterPortuguese.flush();
     
+
     }
 
     public static void createFiles(){

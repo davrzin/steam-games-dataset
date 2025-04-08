@@ -30,8 +30,6 @@ public class Transformations {
         }
         csvPrinter.flush();
 
-    } 
-        
     }
 
     public static void transformPortugueseAndLinux() throws IOException {
@@ -42,7 +40,6 @@ public class Transformations {
         CSVParser csvParser = CSVCreate.initializeCSVParser(gamesFormatedDate);
         CSVPrinter csvPrinterLinux = CSVCreate.initializeCSVPrinter(gamesFormatedSupportLinux, csvParser);
         CSVPrinter csvPrinterPortuguese = CSVCreate.initializeCSVPrinter(gamesFormatedSupportPortuguese, csvParser);
-        
 
         for (CSVRecord record : csvParser) {
 
@@ -66,11 +63,10 @@ public class Transformations {
 
         csvPrinterLinux.flush();
         csvPrinterPortuguese.flush();
-    
 
     }
 
-    public static void createFiles(){
+    public static void createFiles() {
 
         try {
             System.out.println("Generating 'games_formated_release_data.csv'");
@@ -80,8 +76,7 @@ public class Transformations {
             System.out.println("Generating 'portuguese_supported_games.csv' and 'games_linux.csv' files.");
             transformPortugueseAndLinux();
             System.out.println("Done\n");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

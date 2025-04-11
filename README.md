@@ -51,9 +51,9 @@ Utilização do arquivo "games.csv" para as transformações.
 
 Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) e adicione o package ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Esse package contém todos as extensões fundamentais para desenvolvimento na linguagem Java.
 
-- OBS.: O packege"Extension Pack for Java", inclui uma versão do Maven, tornando desnecessário o passo seguinte se você for utilizar o VS code, mas necessário se for utilizar outra IDE para executar o programa.
+- OBS.: O packege"Extension Pack for Java", inclui uma versão do Apache Maven, tornando desnecessário o passo seguinte, se você for utilizar o Visual Studio Code, mas necessário se for utilizar outra IDE para executar o programa.
 
-**3. Instalando a Maven:**
+**3. Instalando o Apache Maven:**
 
 - Baixe o "Binary zip archive" do Apache Maven no [site oficial](https://maven.apache.org/download.cgi). O site disponibiliza as [instruções de instalação](https://maven.apache.org/install.html), caso encontre dificuldades, recomendamos esse [tutorial](https://maven.apache.org/install.html).
 
@@ -64,13 +64,17 @@ Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_i
 
 - [Como instalar o JDK no Ubuntu](https://www.hostinger.com.br/tutoriais/como-instalar-java-no-ubuntu) (testado)
 
-**2. Instalando a Maven:**
+**2. Instalando e configurando o Visual Studio Code:**
+
+Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) e adicione o package ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Esse package contém todos as extensões fundamentais para desenvolvimento na linguagem Java.
+
+- OBS.: O packege"Extension Pack for Java", inclui uma versão do Apache Maven, tornando desnecessário o passo seguinte, se você for utilizar o Visual Studio Code, mas necessário se for utilizar outra IDE para executar o programa.
+
+**3. Instalando O Apache Maven:**
 - [Como instalar a Maven no Ubuntu](https://www.hostinger.com.br/tutoriais/install-maven-ubuntu)
 
 
-**3. Instalando e configurando o Visual Studio Code:**
 
-Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) e adicione o package ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Esse package contém todos as extensões fundamentais para desenvolvimento na linguagem Java.
 
 *Em construção...*
 
@@ -83,7 +87,7 @@ Após instalar Java, Maven e o Visual Studio Code, podemos prosseguir, de fato, 
 
 1. Clone este repositorio usando o URL `https://github.com/davrzin/steam-games-dataset.git` ou baixe como arquivo zip.
 
-2. Após clonar ou baixar, e descompacte o repositorio.
+2. Após clonar ou baixar, descompacte o repositorio.
 
 3. Baixe o aquivo  "games.csv" na página Steam Games Dataset da plataforma Kaggle. [Link](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset)
 
@@ -94,10 +98,16 @@ Após instalar Java, Maven e o Visual Studio Code, podemos prosseguir, de fato, 
 
 4. Por fim, abra o projeto no Visual Studio Code, ou IDE de sua escolha, e execute a classe "Program.Java".
 
-Com isso, o sistema irá efetuar as modificações e devolver os arquivos propostoas na pasta principal.
+    Exemplo de como deve estar antes na execução no  Visual Studio Code:
+    ![antes da execução](./imagens/estado_inicial.png)
+
+    Exemplo de como deve estar depois da execução no Visual Studio Code:
+    ![depois da execução](./imagens/estado_final.png)
+
+Os arquivos gerados "games_formated_release_data.csv", "portuguese_supported_games.csv" e "games_linux.csv" serão armazenados no mesmo diretório que "games.csv".
+
 
 *Em construção...*
-
 
 
 ## Equipe Envolvida

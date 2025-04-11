@@ -79,11 +79,25 @@ Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_i
 *Em construção...*
 
 
-### Mac OS
-*Em construção...*
+### MacOS
+
+**1. Instalando o Java Development Kit (JDK):**
+
+- Baixe e instale a versão 21.0.6, ou posterior, do JDK. no site da [Oracle ](https://www.oracle.com/br/java/technologies/downloads/#jdk23-mac).
+
+**2. Instalando e configurando o Visual Studio Code:**
+
+Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) e adicione o package ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Esse package contém todos as extensões fundamentais para desenvolvimento na linguagem Java.
+
+- OBS.: O packege"Extension Pack for Java", inclui uma versão do Apache Maven, tornando desnecessário o passo seguinte, se você for utilizar o Visual Studio Code, mas necessário se for utilizar outra IDE para executar o programa.
+
+**3. Instalando o Apache Maven:**
+
+- Baixe o Apache Maven no  site: [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi). O site disponibiliza as [instruções de instalação](https://maven.apache.org/install.html), mas caso necessite, recomendamos esse [tutorial](https://www.digitalocean.com/community/tutorials/install-maven-mac-os?_x_tr_hist=true).
+
 
 ## Instruções de Uso
-Após instalar Java, Maven e o Visual Studio Code, podemos prosseguir, de fato, para a execução do sistema desenvolvido.
+Após instalar Java (JDK), Maven e o Visual Studio Code, podemos prosseguir, de fato, para a execução do sistema desenvolvido.
 
 1. Clone este repositorio usando o URL `https://github.com/davrzin/steam-games-dataset.git` ou baixe como arquivo zip.
 

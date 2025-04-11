@@ -43,7 +43,20 @@ Utilização do arquivo "games.csv" para as transformações.
 
 ## Preparando o Ambiente
 ### Windows
-*Em construção...*
+**1. Instalando o Java Development Kit (JDK):**
+
+- Baixe e instale a versão 21.0.6, ou posterior, do JDK. no site da [Oracle ](https://www.oracle.com/br/java/technologies/downloads/#jdk21-windows).
+
+**2. Instalando e configurando o Visual Studio Code:**
+
+Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux) e adicione o package ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack). Esse package contém todos as extensões fundamentais para desenvolvimento na linguagem Java.
+
+- OBS.: O packege"Extension Pack for Java", inclui uma versão do Maven, tornando desnecessário o passo seguinte se você for utilizar o VS code, mas necessário se for utilizar outra IDE para executar o programa.
+
+**3. Instalando a Maven:**
+
+- Baixe o "Binary zip archive" do Apache Maven no [site oficial](https://maven.apache.org/download.cgi). O site disponibiliza as [instruções de instalação](https://maven.apache.org/install.html), caso encontre dificuldades, recomendamos esse [tutorial](https://maven.apache.org/install.html).
+
 
 ### Linux
 
@@ -68,13 +81,18 @@ Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux#_i
 ## Instruções de Uso
 Após instalar Java, Maven e o Visual Studio Code, podemos prosseguir, de fato, para a execução do sistema desenvolvido.
 
-Você pode clonar este repositorio usando o URL `https://github.com/davrzin/steam-games-dataset.git` ou baixá-lo como arquivo zip.
+1. Clone este repositorio usando o URL `https://github.com/davrzin/steam-games-dataset.git` ou baixe como arquivo zip.
 
-Baixe o aquivo  "games.csv" na página Steam Games Dataset da plataforma Kaggle. [Link](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset)
+2. Após clonar ou baixar, e descompacte o repositorio.
 
-Descompacte o arquivo "games.csv.zip" e cole no diretorio principal deste repositorio.
+3. Baixe o aquivo  "games.csv" na página Steam Games Dataset da plataforma Kaggle. [Link](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset)
 
-Após clonar ou baixar, e descompactar, o repositório, abra-o no Visual Studio Code e execute a classe "Program.Java".
+4. Descompacte o arquivo "games.csv.zip" e cole no diretorio principal do repositorio baixado.
+
+    Exemplo no Windows:
+    ![Colando games.CSV no diretório principal](./imagens/colar_gamesCSV_no_diretorio.png)
+
+4. Por fim, abra o projeto no Visual Studio Code, ou IDE de sua escolha, e execute a classe "Program.Java".
 
 Com isso, o sistema irá efetuar as modificações e devolver os arquivos propostoas na pasta principal.
 

@@ -16,7 +16,7 @@
 Este projeto tem como objetivo estudar o desempenho dos algoritmos de ordenação utilizando dados reais do [Steam Games Dataset](https://www.kaggle.com/datasets/fronkongames/steam-games-dataset) obtido no Kaggle. 
 
 ### 🔍 Objetivo Principal (Primeira Etapa):
-Realizar transformações nos dados brutos, para garantindo que estejam no formato adequado para o processamento.
+Realizar transformações nos dados brutos, para garantintir que estejam no formato adequado para o processamento.
 
 ### ✅ Atividades Realizadas (Primeira Etapa):
 
@@ -45,11 +45,11 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 #### 1. Instalando o JDK
 -  Baixe e instale a versão 21.0.6+ do JDK no [site da Oracle](https://www.oracle.com/br/java/technologies/downloads/#jdk23-windows)
 
-#### 2. Configurando o VS Code
+#### 2. Configurando o Visual Studio Code
 - Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows)  
 - Adicione o ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
-💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar VS Code.
+💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar Visual Studio Code.
 
 #### 3. Instalando o Maven (opcional)
  - Baixe o [Apache Maven](https://maven.apache.org/download.cgi)  
@@ -73,6 +73,8 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
  - Instale o [VS Code para Linux](https://code.visualstudio.com/docs/setup/linux)  
 - Adicione o ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
+💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar Visual Studio Code.
+
 #### 3. Instalando o Maven
  Tutorial: [Instalar Maven no Ubuntu](https://www.hostinger.com.br/tutoriais/install-maven-ubuntu)
 
@@ -87,6 +89,8 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 #### 2. Configurando o VS Code
 - Instale o [VS Code para Mac](https://code.visualstudio.com/docs/setup/mac)  
 - Adicione o ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+
+💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar Visual Studio Code.
 
 #### 3. Instalando o Maven
 - Siga o [tutorial para MacOS](https://www.digitalocean.com/community/tutorials/install-maven-mac-os)

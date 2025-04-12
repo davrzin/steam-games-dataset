@@ -43,7 +43,7 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 ### 💻 Windows
 
 #### 1. Instalando o JDK
--  Baixe e instale a versão 21.0.6+ do JDK no [site da Oracle](https://www.oracle.com/br/java/technologies/downloads/#jdk21-windows)
+-  Baixe e instale a versão 21.0.6+ do JDK no [site da Oracle](https://www.oracle.com/br/java/technologies/downloads/#jdk23-windows)
 
 #### 2. Configurando o VS Code
 - Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows)  
@@ -54,7 +54,7 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 #### 3. Instalando o Maven (opcional)
  - Baixe o [Apache Maven](https://maven.apache.org/download.cgi)  
   - Siga o [tutorial de instalação](https://maven.apache.org/install.html)
-   - Se preferir, siga o [tutorial de instalação detalhado](https://maven.apache.org/install.html).
+   - Se preferir, siga o [tutorial de instalação detalhado](https://charlesmms.azurewebsites.net/2017/09/04/instalando-maven-no-windows-10/).
 
 ---
 

@@ -1,7 +1,7 @@
 # 🎮 Steam Games Dataset
 
 ## 📋 Sumário  
-- [🎯 Descrição](../README.md#descrição)  
+- [🎯 Descrição](#-descrição)
 - [📦 Pré-requisitos](../README.md#pré-requisitos) 
 - [🛠️ Preparando o Ambiente](../README.md#preparando-o-ambiente)  
   - [💻 Windows](../README.md#windows)  

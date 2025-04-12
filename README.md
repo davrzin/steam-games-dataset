@@ -1,14 +1,14 @@
 # 🎮 Steam Games Dataset
 
 ## 📋 Sumário  
-- [🎯 Descrição](#-descrição)  
-- [📦 Pré-requisitos](#-pré-requisitos) 
-- [🛠️ Preparando o Ambiente](#preparando-o-ambiente)  
-  - [💻 Windows](#-windows)  
-  - [🐧 Linux](#-linux)
-  - [🍎 MacOS](#-macos)
-- [🚀 Instruções de Uso](#-instruções-de-uso)
-- [👥 Equipe Envolvida](#-equipe-envolvida)
+- [🎯 Descrição](../README.md#descrição)  
+- [📦 Pré-requisitos](../README.md#pré-requisitos) 
+- [🛠️ Preparando o Ambiente](../README.md#preparando-o-ambiente)  
+  - [💻 Windows](../README.md#windows)  
+  - [🐧 Linux](../README.md#linux)
+  - [🍎 MacOS](../README.md#macos)
+- [🚀 Instruções de Uso](../README.md#instruções-de-uso)
+- [👥 Equipe Envolvida](../README.md#-equipe-envolvida)
 
 ---
 
@@ -32,6 +32,12 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
   - Arquivo gerado: "portuguese_supported_games.csv"
 
 ---
+
+## 📦 Pré-Requisitos
+- Maven versão 3.8.7 ou superior;
+- Java versão 21.0.6 ou superior.
+
+
 ## 🛠️ Preparando o Ambiente
 
 ### 💻 Windows

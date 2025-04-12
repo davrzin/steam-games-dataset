@@ -34,7 +34,7 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 ---
 
 ## 📦 Pré-Requisitos
-- Maven versão 3.8.7 ou superior;
+- Apache Maven versão 3.8.7 ou superior;
 - Java versão 21.0.6 ou superior.
 
 
@@ -49,9 +49,9 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 - Instale o [Visual Studio Code](https://code.visualstudio.com/docs/setup/windows)  
 - Adicione o ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
-💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar Visual Studio Code.
+💡 **Observação:** Este pacote já inclui o Apache Maven, dispensando o passo 3 se usar o Visual Studio Code.
 
-#### 3. Instalando o Maven (opcional)
+#### 3. Instalando o Apache Maven
  - Baixe o [Apache Maven](https://maven.apache.org/download.cgi)  
   - Siga o [tutorial de instalação](https://maven.apache.org/install.html)
    - Se preferir, siga o [tutorial de instalação detalhado](https://charlesmms.azurewebsites.net/2017/09/04/instalando-maven-no-windows-10/).
@@ -59,7 +59,7 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 ---
 
 ### 🐧 Linux
-📌 **Foco no Ubuntu**: As instruções abaixo são específicas para distribuições baseadas em Ubuntu. Se você utiliza outra distribuição Linux:
+📌 **Foco no Ubuntu**: As instruções abaixo são específicas para a distribuição Ubuntu. Se você utiliza outra distribuição Linux:
 - Consulte a documentação oficial do seu sistema
 - Adapte os comandos conforme necessário
 - Pesquise por guias específicos para sua distro (Arch, Fedora, etc)
@@ -73,10 +73,10 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
  - Instale o [VS Code para Linux](https://code.visualstudio.com/docs/setup/linux)  
 - Adicione o ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
-💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar Visual Studio Code.
+💡 **Observação:** Este pacote já inclui o Apache Maven, dispensando o passo 3 se usar o Visual o Studio Code.
 
-#### 3. Instalando o Maven
- Tutorial: [Instalar Maven no Ubuntu](https://www.hostinger.com.br/tutoriais/install-maven-ubuntu)
+#### 3. Instalando o Apache Maven
+ Tutorial: [Instalar Apache Maven no Ubuntu](https://www.hostinger.com.br/tutoriais/install-maven-ubuntu)
 
 
 ---
@@ -90,9 +90,9 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 - Instale o [VS Code para Mac](https://code.visualstudio.com/docs/setup/mac)  
 - Adicione o ["Extension Pack for Java"](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
-💡 **Observação:** Este pacote já inclui o Maven, dispensando o passo 3 se usar Visual Studio Code.
+💡 **Observação:** Este pacote já inclui o Apache Maven, dispensando o passo 3 se usar o Visual Studio Code.
 
-#### 3. Instalando o Maven
+#### 3. Instalando o Apache Maven
 - Siga o [tutorial para MacOS](https://www.digitalocean.com/community/tutorials/install-maven-mac-os)
 
 ---
@@ -100,7 +100,7 @@ Utilização do arquivo "games.csv" para as seguintes transformações:
 
 ## 🚀 Instruções de Uso
 
-Após instalar o Java (JDK), o Maven e o Visual Studio Code, podemos, de fato, prosseguir para a execução do programa desenvolvido.
+Após instalar o Java (JDK), o Apache Maven e o Visual Studio Code, podemos, de fato, prosseguir para a execução do programa desenvolvido.
 
 1. Clone o repositório:  
    ```bash
